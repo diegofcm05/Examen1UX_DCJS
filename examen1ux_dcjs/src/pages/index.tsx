@@ -4,6 +4,7 @@ import localFont from "next/font/local";
 import styles from "@/styles/Home.module.css";
 import NavbarC from "./Componentes/navbar";
 import NetflixNavbar from "./Componentes/navbar";
+import Header from "./Componentes/header";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -21,8 +22,9 @@ export default function Home() {
     <>
       
       <NetflixNavbar/>
-      <div style={{ paddingTop: '64px' }}></div>
-      <h1>Navbar done</h1>
+      <div style={{ paddingTop: '64px' }}></div>     
+      <Header/>
+      
       
 
     </>
