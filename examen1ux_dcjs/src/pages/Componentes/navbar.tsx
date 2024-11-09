@@ -37,7 +37,7 @@ function ResponsiveAppBar() {
   };
 
   return (
-    <AppBar position="fixed" sx={{ backgroundColor: 'black' }}>
+    <AppBar position="fixed" sx={{ backgroundColor: '#100c0c' }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
         <img src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Logonetflix.png" alt="Netflix Logo" style={{ display: 'block', width: '100px', height: 'auto', marginRight: '30px'}} />
@@ -117,7 +117,7 @@ function ResponsiveAppBar() {
             
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
+                <Avatar alt="Remy Sharp" src="https://occ-0-1783-1009.1.nflxso.net/dnm/api/v6/K6hjPJd6cR6FpVELC5Pd6ovHRSk/AAAABR-76XnDIpgI9Y5AxW-0mbA8XM6pBawp8AEibixll-x2uzc_tTvqVvqd5gGF2lU_yNwUWSvCvw89O0nfyLklL0_2f8nZ6y0MHg.png" />
               </IconButton>
             </Tooltip>
             <Menu
