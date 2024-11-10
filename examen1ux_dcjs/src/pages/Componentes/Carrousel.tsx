@@ -65,8 +65,8 @@ const ScrollableCarousel: React.FC<ScrollableCarouselProps> = ({
 
   return (
     <>
-      <h2 style={{ fontFamily: "Eina01-Bold", marginLeft: "25px"}}>{title}</h2>
-      <Box sx={{ position: "relative", width: "100%", overflow: "hidden", marginBottom: "35px" }}>
+      <h2 style={{ fontFamily: "Eina01-Bold", marginLeft: "24px"}}>{title}</h2>
+      <Box sx={{ position: "relative", width: "100%", overflow: "hidden", marginBottom: "34px" }}>
         {/* Botón izquierdo */}
         <IconButton
           sx={{
