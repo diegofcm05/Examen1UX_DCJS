@@ -1,48 +1,31 @@
+// Carousel.tsx
 import React, { useRef } from "react";
-import { Card, CardMedia, IconButton, Box } from "@mui/material";
+import { IconButton, Box } from "@mui/material";
 import { ChevronLeft, ChevronRight } from "@mui/icons-material";
+import HoverCard from "./HoverCard"; // Importa el componente HoverCard
+
+interface CarouselItem {
+  img: string;        // Imagen principal
+  hoverImg: string;   // Imagen que se muestra en el hover
+  title: string;
+  episodes: string;
+  genres: string[];
+}
 
 interface ScrollableCarouselProps {
   title: string;
-  img1: string;
-  img2: string;
-  img3: string;
-  img4: string;
-  img5: string;
-  img6: string;
-  img7: string;
-  img8: string;
-  img9: string;
-  img10: string;
-  img11: string;
-  img12: string;
+  items: CarouselItem[]; // Arreglo de objetos con ambas imágenes y demás información
 }
 
-const ScrollableCarousel: React.FC<ScrollableCarouselProps> = ({
-  title,
-  img1,
-  img2,
-  img3,
-  img4,
-  img5,
-  img6,
-  img7,
-  img8,
-  img9,
-  img10,
-  img11,
-  img12,
-}) => {
+const ScrollableCarousel: React.FC<ScrollableCarouselProps> = ({ title, items }) => {
   const carouselRef = useRef<HTMLDivElement | null>(null);
   const scrollAmount = 1200;
 
   const scrollLeft = () => {
     if (carouselRef.current) {
       if (carouselRef.current.scrollLeft === 0) {
-        // Si estamos al inicio, reinicia el scroll al final
         carouselRef.current.scrollLeft = carouselRef.current.scrollWidth;
       } else {
-        // Desplazarse a la izquierda
         carouselRef.current.scrollBy({ left: -scrollAmount, behavior: "smooth" });
       }
     }
@@ -54,10 +37,8 @@ const ScrollableCarousel: React.FC<ScrollableCarouselProps> = ({
         carouselRef.current.scrollLeft + carouselRef.current.clientWidth >=
         carouselRef.current.scrollWidth
       ) {
-        // Si estamos al final, reinicia el scroll al inicio
         carouselRef.current.scrollLeft = 0;
       } else {
-        // Desplazarse a la derecha
         carouselRef.current.scrollBy({ left: scrollAmount, behavior: "smooth" });
       }
     }
@@ -74,7 +55,7 @@ const ScrollableCarousel: React.FC<ScrollableCarouselProps> = ({
             top: "50%",
             left: 0,
             transform: "translateY(-50%)",
-            zIndex: 1,
+            zIndex: 12,
             backgroundColor: "rgba(0, 0, 0, 0.5)",
           }}
           onClick={scrollLeft}
@@ -93,20 +74,16 @@ const ScrollableCarousel: React.FC<ScrollableCarouselProps> = ({
             padding: "20px",
           }}
         >
-          {[img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11, img12].map(
-            (img, index) => (
-              <Card
-                key={index}
-                sx={{
-                  width: 230,
-                  flexShrink: 0,
-                  boxShadow: "none",
-                }}
-              >
-                <CardMedia component="img" height="125" image={img} alt={`Imagen ${index + 1}`} />
-              </Card>
-            )
-          )}
+          {items.map((item, index) => (
+            <HoverCard
+              key={index}
+              img={item.img}
+              hoverImg={item.hoverImg}  // Pasa la imagen de hover
+              title={item.title}
+              episodes={item.episodes}
+              genres={item.genres}
+            />
+          ))}
         </div>
 
         {/* Botón derecho */}
@@ -116,7 +93,7 @@ const ScrollableCarousel: React.FC<ScrollableCarouselProps> = ({
             top: "50%",
             right: 0,
             transform: "translateY(-50%)",
-            zIndex: 1,
+            zIndex: 12,
             backgroundColor: "rgba(0, 0, 0, 0.5)",
           }}
           onClick={scrollRight}
