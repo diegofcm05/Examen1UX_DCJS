@@ -28,7 +28,7 @@ export default function Home() {
       <Header/>
       
       <Continue title="Continue Watching for Don Poulet" 
-      img1="https://store.gkids.com/cdn/shop/files/ARC1_Select_01_1656x700.jpg?v=1720729083" 
+      img1="https://ntvb.tmsimg.com/assets/p20738391_b_h10_aa.jpg?w=960&h=540" 
       img2="https://fhsnixnews.com/wp-content/uploads/2023/02/office-900x506.png" 
       img3="https://www.generacionfriki.es/wp-content/uploads/2019/10/Neon-Genesis-Evangelion-Generacion-Friki-PORTADA.jpg" 
       img4="https://www.thenewshouse.com/wp-content/uploads/Untitled-design-4.png" 
@@ -42,7 +42,7 @@ export default function Home() {
       img12="https://i0.wp.com/www.cinegeek.net/wp-content/uploads/2024/07/Demon-Slayer-Kimetsu-no-Yaiba-Infinity-Castle.png?fit=1200%2C675&ssl=1"
       />
       <Carousel title="We think you'll love this" 
-      img1="https://a.storyblok.com/f/178900/1920x1080/fc9956de7a/dandadan-key-art-wide.png" 
+      img1="https://wallpapersbq.com/images/dandadan-netflix/dandadan-netflix-wallpaper-5.webp" 
       img2="https://imgsrv.crunchyroll.com/cdn-cgi/image/fit=contain,format=auto,quality=85,width=1200,height=675/catalog/crunchyroll/bc5934e65dcfc3e6f1f783160ce023fb.jpg" 
       img3="https://miro.medium.com/v2/resize:fit:2000/1*6g0DW6WPqyI43bagLvgscw.png" 
       img4="https://hipermediaciones.com/wp-content/uploads/2013/10/21225_breaking_bad.jpg?w=1000" 
