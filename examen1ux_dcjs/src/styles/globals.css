@@ -49,15 +49,28 @@ a {
   src: url(https://assets.nflxext.com/ffe/siteui/fonts/netflix-sans/v3/NetflixSans_W_Th.woff2) format('woff2'),url(https://assets.nflxext.com/ffe/siteui/fonts/netflix-sans/v3/NetflixSans_W_Th.woff) format('woff')
 }
 
-/* HeroSection.css */
-.hero-section {
-  position: relative;
-  width: 100%;
-  height: 70vh; /* Adjusted to 70% of the viewport height */
-  overflow: hidden;
+
+@font-face {
+  font-family: "Eina01-Bold";
+  src: url("https://db.onlinewebfonts.com/t/2d57f676e3d6955778fb8acac0176b9a.eot");
+  src: url("https://db.onlinewebfonts.com/t/2d57f676e3d6955778fb8acac0176b9a.eot?#iefix")format("embedded-opentype"),
+  url("https://db.onlinewebfonts.com/t/2d57f676e3d6955778fb8acac0176b9a.woff2")format("woff2"),
+  url("https://db.onlinewebfonts.com/t/2d57f676e3d6955778fb8acac0176b9a.woff")format("woff"),
+  url("https://db.onlinewebfonts.com/t/2d57f676e3d6955778fb8acac0176b9a.ttf")format("truetype"),
+  url("https://db.onlinewebfonts.com/t/2d57f676e3d6955778fb8acac0176b9a.svg#Eina01-Bold")format("svg");
 }
 
-.hero-background {
+
+/* Header */
+.head-section {
+  position: relative;
+  width: 100%;
+  height: 70vh;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.head-background {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -67,7 +80,7 @@ a {
   z-index: 1;
 }
 
-.hero-content {
+.head-content {
   position: relative;
   z-index: 2;
   color: white;
@@ -79,16 +92,32 @@ a {
   transform: translateY(-50%);
 }
 
-.hero-title {
+.head-title {
   font-size: 3rem;
   margin-bottom: 20px;
 }
 
-.hero-description {
+.head-description {
   font-size: 1.2rem;
   margin-bottom: 30px;
 }
 
-.hero-buttons > button {
+.head-buttons > button {
   margin: 0 10px;
+}
+
+
+/* Scrolls*/
+
+/* Ocultar la barra de desplazamiento para un estilo más limpio */
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* Estilo adicional para los botones de navegación */
+.MuiIconButton-root {
+  width: 40px;
+  height: 40px;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 50%;
 }
