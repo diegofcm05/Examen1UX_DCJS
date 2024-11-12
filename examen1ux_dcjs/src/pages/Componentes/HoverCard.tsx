@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { Card, CardMedia, CardContent, Typography, CardActions, IconButton, Box } from "@mui/material";
-import PlayArrowIcon from "@mui/icons-material/PlayArrow";
+import PlayCircleOutlineIcon from '@mui/icons-material/PlayCircleOutline';
 import InfoIcon from "@mui/icons-material/Info";
+import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 
 interface HoverCardProps {
   img: string;
@@ -11,10 +12,12 @@ interface HoverCardProps {
   genres: string[];
 }
 
+//Declaracion de objeto tarjeta
 const HoverCard: React.FC<HoverCardProps> = ({ img, hoverImg, title, episodes, genres }) => {
   const [hovered, setHovered] = useState(false);
   const [hoverPosition, setHoverPosition] = useState<{ top: number; left: number; }>({ top: 0, left: 0 });
 
+  //Al poner el mouse encima, se activa la tarjeta
   const handleMouseEnter = (event: React.MouseEvent) => {
     const rect = (event.target as HTMLImageElement).getBoundingClientRect();
     setHoverPosition({ top: rect.bottom+4, left: rect.left });
@@ -29,15 +32,15 @@ const HoverCard: React.FC<HoverCardProps> = ({ img, hoverImg, title, episodes, g
     <Box
       sx={{
         position: "relative",
-        width: "255px",    // Fix width
-        height: "auto",    // Maintain aspect ratio
+        width: "255px", 
+        height: "auto",    
         cursor: "pointer",
-        flexShrink: 0,     // Prevent shrinking when resizing
+        flexShrink: 0,     //Previene el encogido al hacerle re-size a la pagina
       }}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      {/* Imagen principal */}
+      {/*Imagen principal de la tarjeta, osea el adelanto*/}
       <CardMedia
         component="img"
         height="138"
@@ -45,7 +48,7 @@ const HoverCard: React.FC<HoverCardProps> = ({ img, hoverImg, title, episodes, g
         alt={title}
         sx={{
           borderRadius: 1,
-          objectFit: "cover",  // Prevent distortion
+          objectFit: "cover",  //Esto previene la distorsion de imagen
         }}
       />
 
@@ -56,7 +59,7 @@ const HoverCard: React.FC<HoverCardProps> = ({ img, hoverImg, title, episodes, g
             position: "fixed",
             top: hoverPosition.top,
             left: hoverPosition.left,
-            width: "255px",    // Set fixed width
+            width: "255px",
             zIndex: 10,
             backgroundColor: "rgba(0, 0, 0, 0.9)",
             color: "white",
@@ -72,7 +75,7 @@ const HoverCard: React.FC<HoverCardProps> = ({ img, hoverImg, title, episodes, g
             alt={title}
             sx={{
               borderRadius: "8px",
-              objectFit: "cover", // Prevent distortion on hover image
+              objectFit: "cover",
             }}
           />
           <CardContent>
@@ -88,10 +91,13 @@ const HoverCard: React.FC<HoverCardProps> = ({ img, hoverImg, title, episodes, g
           </CardContent>
           <CardActions>
             <IconButton sx={{ color: "white" }}>
-              <PlayArrowIcon />
+              <PlayCircleOutlineIcon />
             </IconButton>
             <IconButton sx={{ color: "white" }}>
               <InfoIcon />
+            </IconButton>
+            <IconButton sx={{ color: "white" }}>
+              <AddCircleOutlineIcon/>
             </IconButton>
           </CardActions>
         </Card>

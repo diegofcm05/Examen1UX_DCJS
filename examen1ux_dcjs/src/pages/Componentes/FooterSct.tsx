@@ -1,6 +1,7 @@
 import { Button } from '@mui/material';
 import React from 'react';
 
+//Definicion de Footer de la pagina
 const FooterSct: React.FC = () => {
   return (
     <footer className="footer-section">

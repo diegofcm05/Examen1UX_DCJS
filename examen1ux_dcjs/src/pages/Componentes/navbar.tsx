@@ -36,6 +36,7 @@ function ResponsiveAppBar() {
     setAnchorElUser(null);
   };
 
+  //Funcion de navbar principal
   return (
     <AppBar position="fixed" sx={{ backgroundColor: '#100c0c' }}>
       <Container maxWidth="xl">

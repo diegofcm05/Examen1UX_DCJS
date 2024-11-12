@@ -5,22 +5,23 @@ import { ChevronLeft, ChevronRight } from "@mui/icons-material";
 import HoverCard from "./HoverCard"; // Importa el componente HoverCard
 
 interface CarouselItem {
-  img: string;        // Imagen principal
-  hoverImg: string;   // Imagen que se muestra en el hover
-  title: string;
-  episodes: string;
-  genres: string[];
+  img: string; // Imagen principal
+  hoverImg: string; // Imagen que se muestra al pasar el mouse sobre una serie/pelicula
+  title: string; //Titulo de la serie/pelicula 
+  episodes: string; //episodios/duracion
+  genres: string[]; //genero(s)
 }
 
 interface ScrollableCarouselProps {
   title: string;
-  items: CarouselItem[]; // Arreglo de objetos con ambas imágenes y demás información
+  items: CarouselItem[]; // Arreglo de objetos con toda la informacion necesaria
 }
 
 const ScrollableCarousel: React.FC<ScrollableCarouselProps> = ({ title, items }) => {
   const carouselRef = useRef<HTMLDivElement | null>(null);
   const scrollAmount = 1200;
 
+  //Funcion para scroll a la izquierda
   const scrollLeft = () => {
     if (carouselRef.current) {
       if (carouselRef.current.scrollLeft === 0) {
@@ -31,6 +32,7 @@ const ScrollableCarousel: React.FC<ScrollableCarouselProps> = ({ title, items })
     }
   };
 
+  //Funcion para scroll a la derecha
   const scrollRight = () => {
     if (carouselRef.current) {
       if (
@@ -48,7 +50,7 @@ const ScrollableCarousel: React.FC<ScrollableCarouselProps> = ({ title, items })
     <>
       <h2 style={{ fontFamily: "Eina01-Bold", marginLeft: "24px"}}>{title}</h2>
       <Box sx={{ position: "relative", width: "100%", overflow: "hidden", marginBottom: "34px" }}>
-        {/* Botón izquierdo */}
+        {/*Botón izquierdo del scroller*/}
         <IconButton
           sx={{
             position: "absolute",
@@ -63,7 +65,7 @@ const ScrollableCarousel: React.FC<ScrollableCarouselProps> = ({ title, items })
           <ChevronLeft style={{ color: "white" }} />
         </IconButton>
 
-        {/* Contenedor del carrusel */}
+        {/*Contenedor del carrusel*/}
         <div
           ref={carouselRef}
           style={{
@@ -78,7 +80,7 @@ const ScrollableCarousel: React.FC<ScrollableCarouselProps> = ({ title, items })
             <HoverCard
               key={index}
               img={item.img}
-              hoverImg={item.hoverImg}  // Pasa la imagen de hover
+              hoverImg={item.hoverImg}
               title={item.title}
               episodes={item.episodes}
               genres={item.genres}
@@ -86,7 +88,7 @@ const ScrollableCarousel: React.FC<ScrollableCarouselProps> = ({ title, items })
           ))}
         </div>
 
-        {/* Botón derecho */}
+        {/*Botón derecho del scroller*/}
         <IconButton
           sx={{
             position: "absolute",
@@ -104,5 +106,5 @@ const ScrollableCarousel: React.FC<ScrollableCarouselProps> = ({ title, items })
     </>
   );
 };
-
+//Exportacion
 export default ScrollableCarousel;
